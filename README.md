@@ -2,21 +2,30 @@
 
 West-MEC Coding Year 2. Your first real database: **IndexedDB**, the database built into every browser.
 
-You build the cart for a merch shop. Add something, close the browser, come back tomorrow: it's still in the cart. No server, no account, no install.
+Over 3 days you build the cart for a merch shop. Add something, close the browser, come back tomorrow: it's still in the cart. No server, no account, no install.
 
 ## Setup
 
-1. In VS Code: **File > Open Folder**, pick your class folder. **Terminal > New Terminal**, then:
+1. Open the terminal: **PowerShell**, **Git Bash**, or **Command Prompt** (any one works).
+2. Move into your code folder on the Desktop (use your folder's real name):
+
+   ```
+   cd Desktop
+   cd code
+   ```
+
+   Desktop not found? It may be inside OneDrive: `cd OneDrive`, then `cd Desktop`.
+
+3. Clone the shop:
 
    ```
    git clone https://github.com/Xerrath/indexeddb-cart-starter.git
    ```
 
-2. **File > Open Folder** and open `indexeddb-cart-starter`.
-3. Install the **Live Server** extension if you don't have it (VS Code will suggest it).
-4. Right-click `index.html` > **Open with Live Server**. Use **Chrome**.
+4. Open **VS Code** > **File > Open Folder** > Desktop > your code folder > `indexeddb-cart-starter` > **Select Folder**.
+5. Install the **Live Server** extension if you don't have it, then right-click `index.html` > **Open with Live Server**. Use **Chrome**.
 
-You should see the shop with six products, and messages that say things are **not built yet**. That's right: you build them.
+You should see the shop and a gray line that says `openDB() is not built yet (Day 1)`. That's right: you build it.
 
 ## The files
 
