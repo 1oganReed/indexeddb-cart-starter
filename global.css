@@ -6,17 +6,44 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+/* West-MEC dot texture (laid over the orange shapes). */
+.dots {
+  background-image:
+    radial-gradient(rgb(255 255 255 / 0.28) 1.6px, transparent 1.8px),
+    linear-gradient(135deg, #f6921e, #ec1c24);
+  background-size: 14px 14px, 100% 100%;
+}
+
+/* The slanted edge on the hero's orange shape. */
+.angle-cut {
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* The chevrons slide a little, like they're moving forward. */
+.chevron-slide {
+  animation: slide 2.4s ease-in-out infinite;
+}
+
+@keyframes slide {
+  50% {
+    transform: translateX(14px);
+  }
 }
 
 /* The cart number pops when it changes (cart.js adds the class). */
 .bump {
-  animation: bump 0.3s ease-out;
+  animation: bump 0.35s ease-out;
 }
 
 @keyframes bump {
   50% {
-    transform: scale(1.35);
+    transform: scale(1.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron-slide,
+  .bump {
+    animation: none;
   }
 }

@@ -26,6 +26,7 @@ You should see the shop with six products, and messages that say things are **no
 | `global.css` | A little plain CSS for the whole site. | No |
 | `products.js` | The six products, as an array of objects. | No |
 | `db.js` | **Every** IndexedDB function. | **Yes: this is your file** |
+| `images/` | West-MEC logo and shapes. | No |
 | `cart.js` | Draws the page and calls the functions in `db.js`. | No (read it!) |
 
 ## See your database
