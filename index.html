@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West-MEC Merch Shop</title>
+
+  <!-- Tailwind CSS (Play CDN): turns the class names below into real CSS while the page runs. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3"></script>
+
+  <!-- Our colors. @theme turns --color-navy into classes like bg-navy and text-navy. -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #0c2340;
+      --color-orange: #f57e20;
+      --color-cream: #fdf8f3;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./global.css">
+
+  <script src="./products.js" defer></script>
+  <script src="./db.js" defer></script>
+  <script src="./cart.js" defer></script>
+</head>
+<body class="bg-cream text-navy min-h-screen">
+
+  <header class="bg-navy text-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-bold lg:text-2xl">West-MEC <span class="text-orange">Merch</span></h1>
+      <a href="#cart" class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 hover:bg-white/20">
+        Cart
+        <span id="cart-count" class="rounded-full bg-orange px-2 text-sm font-bold text-navy">0</span>
+      </a>
+    </div>
+  </header>
+
+  <p id="db-status" class="max-w-6xl mx-auto px-4 pt-4 text-sm"></p>
+
+  <div id="message" class="hidden max-w-6xl mx-auto mt-4 px-4">
+    <p class="rounded-lg border border-red-300 bg-red-50 px-4 py-3 text-red-800">
+      <span id="message-text"></span>
+      <button id="message-close" class="ml-2 font-bold" aria-label="Close message">&times;</button>
+    </p>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 grid gap-8 lg:grid-cols-3">
+
+    <section class="lg:col-span-2">
+      <h2 class="mb-4 text-lg font-bold">Products</h2>
+      <div id="product-list" class="grid gap-4 lg:grid-cols-3"></div>
+    </section>
+
+    <aside class="flex flex-col gap-6">
+      <section id="cart" class="rounded-xl bg-white p-5 shadow-sm">
+        <h2 class="mb-4 text-lg font-bold">Your Cart</h2>
+        <ul id="cart-list" class="flex flex-col gap-3"></ul>
+        <div class="mt-4 flex items-center justify-between border-t border-navy/10 pt-4">
+          <span class="font-bold">Total</span>
+          <span id="cart-total" class="text-lg font-bold">$0.00</span>
+        </div>
+        <button id="clear-cart" class="mt-4 w-full rounded-lg border border-red-300 px-4 py-2 text-red-700 hover:bg-red-50">
+          Clear cart
+        </button>
+      </section>
+
+      <section class="rounded-xl bg-white p-5 shadow-sm">
+        <h2 class="mb-4 text-lg font-bold">Saved for Later</h2>
+        <ul id="wishlist-list" class="flex flex-col gap-3"></ul>
+      </section>
+    </aside>
+
+  </main>
+
+</body>
+</html>
