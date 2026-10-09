@@ -47,7 +47,7 @@ function renderProducts() {
   `).join("");
 }
 
-// ---------- Database status (Part 3: openDB) ----------
+// ---------- Database status (Part 2: openDB) ----------
 async function renderStatus() {
   try {
     const db = await openDB();
@@ -58,7 +58,7 @@ async function renderStatus() {
   }
 }
 
-// ---------- Cart (Part 5: getCart) ----------
+// ---------- Cart (Part 4: getCart) ----------
 async function renderCart() {
   try {
     const items = await getCart();
@@ -97,7 +97,7 @@ async function renderCart() {
   }
 }
 
-// ---------- Saved for later (Part 8: getWishlist) ----------
+// ---------- Saved for later (Part 7: getWishlist) ----------
 async function renderWishlist() {
   try {
     const items = await getWishlist();
@@ -139,12 +139,12 @@ document.body.addEventListener("click", async (event) => {
   const product = PRODUCTS.find((p) => p.id === id);
 
   try {
-    if (button.dataset.action === "add") await addToCart(product);         // Part 4
-    if (button.dataset.action === "plus") await changeQuantity(id, 1);      // Part 6
-    if (button.dataset.action === "minus") await changeQuantity(id, -1);    // Part 6
-    if (button.dataset.action === "remove") await removeFromCart(id);       // Part 7
-    if (button.dataset.action === "save") await addToWishlist(product);     // Part 8
-    if (button.dataset.action === "unsave") await removeFromWishlist(id);   // Part 8
+    if (button.dataset.action === "add") await addToCart(product);         // Part 3
+    if (button.dataset.action === "plus") await changeQuantity(id, 1);      // Part 5
+    if (button.dataset.action === "minus") await changeQuantity(id, -1);    // Part 5
+    if (button.dataset.action === "remove") await removeFromCart(id);       // Part 6
+    if (button.dataset.action === "save") await addToWishlist(product);     // Part 7
+    if (button.dataset.action === "unsave") await removeFromWishlist(id);   // Part 7
     if (button.dataset.action === "move") await moveToCart(id);             // Challenge
     message.classList.add("hidden");
   } catch (error) {
@@ -156,7 +156,7 @@ document.body.addEventListener("click", async (event) => {
 
 clearButton.addEventListener("click", async () => {
   try {
-    await clearCart(); // Part 7
+    await clearCart(); // Part 6
     message.classList.add("hidden");
   } catch (error) {
     showMessage(error);

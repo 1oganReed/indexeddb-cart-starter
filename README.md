@@ -22,7 +22,7 @@ You should see the shop with six products, and messages that say things are **no
 
 | File | What it is | Do you change it? |
 | --- | --- | --- |
-| `index.html` | The page. Styled with **Tailwind CSS** classes. | No (you can play with classes) |
+| `index.html` | The page (styled with Tailwind CSS classes). | No |
 | `global.css` | A little plain CSS for the whole site. | No |
 | `products.js` | The six products, as an array of objects. | No |
 | `db.js` | **Every** IndexedDB function. | **Yes: this is your file** |

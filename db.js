@@ -14,46 +14,46 @@ function promisify(request) {
   });
 }
 
-// ---------- Part 3: Open the database ----------
+// ---------- Part 2: Open the database ----------
 function openDB() {
-  throw new Error("openDB() is not built yet (Part 3)");
+  throw new Error("openDB() is not built yet (Part 2)");
 }
 
-// ---------- Part 4: CREATE ----------
+// ---------- Part 3: CREATE ----------
 async function addToCart(product) {
-  throw new Error("addToCart() is not built yet (Part 4)");
+  throw new Error("addToCart() is not built yet (Part 3)");
 }
 
-// ---------- Part 5: READ ----------
+// ---------- Part 4: READ ----------
 async function getCart() {
-  throw new Error("getCart() is not built yet (Part 5)");
+  throw new Error("getCart() is not built yet (Part 4)");
 }
 
-// ---------- Part 6: UPDATE ----------
+// ---------- Part 5: UPDATE ----------
 async function changeQuantity(id, amount) {
-  throw new Error("changeQuantity() is not built yet (Part 6)");
+  throw new Error("changeQuantity() is not built yet (Part 5)");
 }
 
-// ---------- Part 7: DELETE ----------
+// ---------- Part 6: DELETE ----------
 async function removeFromCart(id) {
-  throw new Error("removeFromCart() is not built yet (Part 7)");
+  throw new Error("removeFromCart() is not built yet (Part 6)");
 }
 
 async function clearCart() {
-  throw new Error("clearCart() is not built yet (Part 7)");
+  throw new Error("clearCart() is not built yet (Part 6)");
 }
 
-// ---------- Part 8: Saved for later (you design this one) ----------
+// ---------- Part 7: Saved for later (you design this one) ----------
 async function addToWishlist(product) {
-  throw new Error("addToWishlist() is not built yet (Part 8)");
+  throw new Error("addToWishlist() is not built yet (Part 7)");
 }
 
 async function getWishlist() {
-  throw new Error("Saved for later is not built yet (Part 8)");
+  throw new Error("Saved for later is not built yet (Part 7)");
 }
 
 async function removeFromWishlist(id) {
-  throw new Error("removeFromWishlist() is not built yet (Part 8)");
+  throw new Error("removeFromWishlist() is not built yet (Part 7)");
 }
 
 // ---------- Challenge (optional) ----------
