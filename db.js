@@ -1,5 +1,5 @@
 // db.js: everything that talks to IndexedDB lives in this file.
-// cart.js calls these functions. YOU write them, one part at a time.
+// cart.js calls these functions. YOU write them, one day at a time.
 // Each one throws "not built yet" until you replace that line with your code.
 
 const DB_NAME = "shopDB";
@@ -14,46 +14,55 @@ function promisify(request) {
   });
 }
 
-// ---------- Part 2: Open the database ----------
+// ---------- Day 1: Open the database ----------
+// Opens shopDB. Makes the "cart" store the first time.
+// Gives back (a promise for) the open database.
 function openDB() {
-  throw new Error("openDB() is not built yet (Part 2)");
+  throw new Error("openDB() is not built yet (Day 1)");
 }
 
-// ---------- Part 3: CREATE ----------
+// ---------- Day 2: CREATE ----------
+// product: one object from PRODUCTS.
+// Puts it in the cart with qty 1, or adds 1 to qty if it's already there.
 async function addToCart(product) {
-  throw new Error("addToCart() is not built yet (Part 3)");
+  throw new Error("addToCart() is not built yet (Day 2)");
 }
 
-// ---------- Part 4: READ ----------
+// ---------- Day 2: READ ----------
+// Gives back an array of every item in the cart.
 async function getCart() {
-  throw new Error("getCart() is not built yet (Part 4)");
+  throw new Error("getCart() is not built yet (Day 2)");
 }
 
-// ---------- Part 5: UPDATE ----------
+// ---------- Day 2: UPDATE ----------
+// id: which item. amount: 1 or -1.
+// Changes that item's qty by amount.
 async function changeQuantity(id, amount) {
-  throw new Error("changeQuantity() is not built yet (Part 5)");
+  throw new Error("changeQuantity() is not built yet (Day 2)");
 }
 
-// ---------- Part 6: DELETE ----------
+// ---------- Day 3: DELETE ----------
+// id: which item. Takes it out of the cart.
 async function removeFromCart(id) {
-  throw new Error("removeFromCart() is not built yet (Part 6)");
+  throw new Error("removeFromCart() is not built yet (Day 3)");
 }
 
+// Empties the whole cart.
 async function clearCart() {
-  throw new Error("clearCart() is not built yet (Part 6)");
+  throw new Error("clearCart() is not built yet (Day 3)");
 }
 
-// ---------- Part 7: Saved for later (you design this one) ----------
+// ---------- Day 3: Saved for later (you design this one) ----------
 async function addToWishlist(product) {
-  throw new Error("addToWishlist() is not built yet (Part 7)");
+  throw new Error("addToWishlist() is not built yet (Day 3)");
 }
 
 async function getWishlist() {
-  throw new Error("Saved for later is not built yet (Part 7)");
+  throw new Error("Saved for later is not built yet (Day 3)");
 }
 
 async function removeFromWishlist(id) {
-  throw new Error("removeFromWishlist() is not built yet (Part 7)");
+  throw new Error("removeFromWishlist() is not built yet (Day 3)");
 }
 
 // ---------- Challenge (optional) ----------

@@ -64,7 +64,7 @@ function renderProducts() {
   `).join("");
 }
 
-// ---------- Database status (Part 2: openDB) ----------
+// ---------- Database status (Day 1: openDB) ----------
 async function renderStatus() {
   try {
     const db = await openDB();
@@ -75,7 +75,7 @@ async function renderStatus() {
   }
 }
 
-// ---------- Cart (Part 4: getCart) ----------
+// ---------- Cart (Day 2: getCart) ----------
 async function renderCart() {
   try {
     const items = await getCart();
@@ -114,7 +114,7 @@ async function renderCart() {
   }
 }
 
-// ---------- Saved for later (Part 7: getWishlist) ----------
+// ---------- Saved for later (Day 3: getWishlist) ----------
 async function renderWishlist() {
   try {
     const items = await getWishlist();
@@ -167,12 +167,12 @@ document.body.addEventListener("click", async (event) => {
   const product = PRODUCTS.find((p) => p.id === id);
 
   try {
-    if (button.dataset.action === "add") await addToCart(product);         // Part 3
-    if (button.dataset.action === "plus") await changeQuantity(id, 1);      // Part 5
-    if (button.dataset.action === "minus") await changeQuantity(id, -1);    // Part 5
-    if (button.dataset.action === "remove") await removeFromCart(id);       // Part 6
-    if (button.dataset.action === "save") await addToWishlist(product);     // Part 7
-    if (button.dataset.action === "unsave") await removeFromWishlist(id);   // Part 7
+    if (button.dataset.action === "add") await addToCart(product);         // Day 2
+    if (button.dataset.action === "plus") await changeQuantity(id, 1);      // Day 2
+    if (button.dataset.action === "minus") await changeQuantity(id, -1);    // Day 2
+    if (button.dataset.action === "remove") await removeFromCart(id);       // Day 3
+    if (button.dataset.action === "save") await addToWishlist(product);     // Day 3
+    if (button.dataset.action === "unsave") await removeFromWishlist(id);   // Day 3
     if (button.dataset.action === "move") await moveToCart(id);             // Challenge
     message.classList.add("hidden");
     if (button.dataset.action === "add") flash(button, "Added ✓");
@@ -185,7 +185,7 @@ document.body.addEventListener("click", async (event) => {
 
 clearButton.addEventListener("click", async () => {
   try {
-    await clearCart(); // Part 6
+    await clearCart(); // Day 3
     message.classList.add("hidden");
   } catch (error) {
     showMessage(error);
