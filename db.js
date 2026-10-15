@@ -18,27 +18,60 @@ function promisify(request) {
 // Opens shopDB. Makes the "cart" store the first time.
 // Gives back (a promise for) the open database.
 function openDB() {
-  throw new Error("openDB() is not built yet (Day 1)");
+  const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+  request.onupgradeneeded = () => {
+    console.log("Upgrade Ran!");
+    const db = request.result;
+    db.createObjectStore("cart", { keyPath: "id" });
+  };
+  return promisify(request);
 }
 
 // ---------- Day 2: CREATE ----------
 // product: one object from PRODUCTS.
 // Puts it in the cart with qty 1, or adds 1 to qty if it's already there.
 async function addToCart(product) {
-  throw new Error("addToCart() is not built yet (Day 2)");
+  const db = await openDB();
+  const store = db.transaction("cart", "readwrite").objectStore("cart");
+  
+  const item = await promisify(store.get(product.id));
+
+  if(item){
+    item.qty = item.qty + 1;
+    await promisify(store.put(item));
+  } else {
+    await promisify(store.add({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      emoji: product.emoji,
+      qty: 1,
+    }));
+  }
 }
 
 // ---------- Day 2: READ ----------
 // Gives back an array of every item in the cart.
 async function getCart() {
-  throw new Error("getCart() is not built yet (Day 2)");
+  const db = await openDB();
+  const store = db.transaction("cart").objectStore("cart");
+  // no mode = "readonly"
+  return promisify(store.getAll());
 }
 
 // ---------- Day 2: UPDATE ----------
 // id: which item. amount: 1 or -1.
 // Changes that item's qty by amount.
 async function changeQuantity(id, amount) {
-  throw new Error("changeQuantity() is not built yet (Day 2)");
+  const db = await openDB();
+  const store = db.transaction("cart", "readwrite").objectStore("cart");
+
+  const item = await promisify(store.get(id));
+  item.qty = item.qty + amount;
+
+  if(item.qty < 1) return;
+  await promisify(store.put(item));
 }
 
 // ---------- Day 3: DELETE ----------
